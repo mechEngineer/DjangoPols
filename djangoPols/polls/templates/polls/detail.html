@@ -1,13 +1,21 @@
-<h1>{{question.question_text}}</h1>
-{% if error_message %} <p><strong>{{ error_message }}</stromg</p> {% endif %}
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    <h1>{{question.question_text}}</h1> <hr>
+    {% if error_message %} <p><strong>{{ error_message }}</stromg</p> {% endif %}
 
 
-<form action=" {% url 'polls:vote' question.id %}" method="POST">
-{% csrf_token %}
-{% for choice in question.choice_set.all %}
-    <input type="radio" name="choice" is="choice{{forloop.counter}}" value="{{ choice.id }}">
-    <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label>
-    <br>
-{% endfor %}
-<input type="submit" value="Vote">
-</form>
+    <form action=" {% url 'polls:vote' question.id %}" method="POST">
+    {% csrf_token %}
+    {% for choice in question.choice_set.all %}
+        <label for="choice{{forloop.counter}}">
+        <input type="radio" name="choice" is="choice{{forloop.counter}}" value="{{ choice.id }}">
+            <span class="label-body">
+            {{choice.choice_text}}
+            </span>
+        </label>
+        <br>
+    {% endfor %}
+    <input type="submit" class="button-primary" value="Vote">
+    </form>
+{% endblock content %}
