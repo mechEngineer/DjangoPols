@@ -1,0 +1,17 @@
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+#chart {
+  width: 65%;
+}
+
+@media print {
+  #chart {
+    width: 15cm !important;
+    height: 6cm !important;
+  }
+}
