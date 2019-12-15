@@ -13,8 +13,8 @@
     <a href=" {% url 'polls:detail' question.id %} "> Vote again</a>
 
 
-    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-        <canvas id="chart"></canvas>
+    <div class="chart-container" >
+        <canvas id="chart" width="60%"> </canvas>
     </div>
 {% endblock content %}
 
@@ -43,7 +43,7 @@ var chart = new Chart(ctx, {
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)'],
             borderWidth: 2,
-            borderHoverWidth: 5,
+            hoverBorderWidth: 5,
             data: [{% for choice in question.choice_set.all %} 
         '{{choice.votes}}', {% endfor %} ]
         }]
@@ -57,11 +57,16 @@ var chart = new Chart(ctx, {
                     beginAtZero: true
                 }
             }]
-        }
-    }
+        },
+        layout: {
+            padding: {
+                left: 50,
+                right: 50,
+                top: 0,
+                bottom: 0
+            }
+    }}
 });
-
-console.log(labels);
 </script>
 {% endblock scripts %}
 
