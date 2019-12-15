@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 50px;
+  /* padding: 50px; */
+}
+ul {
+  list-style: none;
+}
+
+li {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  border-bottom: 2pt solid gray;
+}
+
+li a {
+  color: green;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}

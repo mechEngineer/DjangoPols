@@ -112,3 +112,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+djangoPols/polls/templates/polls/static/polls/style.css
