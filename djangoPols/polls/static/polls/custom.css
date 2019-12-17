@@ -1,3 +1,64 @@
+.title h1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent calc(50% + 8px),
+    rgba(54, 162, 235, 0.3) calc(50% + 8px),
+    rgba(54, 162, 235, 0.3) 95%,
+    transparent 95%
+  );
+}
+
+.title h1:hover {
+  background-image: none;
+  background-color: rgba(54, 162, 235, 0.55);
+  cursor: pointer;
+}
+
+.results {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-width: 2pt;
+  border-style: solid;
+  border-radius: 7px;
+  height: 45px;
+  margin-bottom: 5px;
+  background-color: beige;
+}
+
+.result-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-image: linear-gradient(to left, #e66465, #9198e5); */
+  /* border-color: linear-gradient(to left, #e66465, #9198e5); */
+  background-image: linear-gradient(
+    to right,
+    red 0%,
+    orange calc(25%),
+    yellow 50%,
+    lawngreen 75%,
+    green 100%
+  );
+  border-radius: 4px;
+  height: 100%;
+  font-size: 1.5em;
+}
+.result-item span {
+  min-width: 500px;
+}
+
+.chart-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .chart-container {
   display: flex;
   justify-content: center;

@@ -1,26 +1,60 @@
 {% extends 'polls/base.html' %}
 
 {% block content %}
+<div class="title">
     <h1>{{question.question_text}}</h1> <hr>
-    {% if error_message %} <p><strong>{{ error_message }}</stromg</p> {% endif %}
+</div>
 
-    <ul>
+    {% if error_message %} <p><strong>{{ error_message }}</stromg</p> {% endif %}
     {% for choice in question.choice_set.all %}
-        <li>{{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}</li>
+    <div class="results">
+        <div class="result-item">
+            <span>
+            {{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}
+            </span>
+        </div>
+    </div>
     {% endfor %}
+    
     </ul>
 
     <a href=" {% url 'polls:detail' question.id %} "> Vote again</a>
 
-
+<h2>Dijagram glasova</h2>
+<div class="chart-area">
     <div class="chart-container" >
         <canvas id="chart" width="60%"> </canvas>
     </div>
+</div>
 {% endblock content %}
 
 
 {% block scripts %}
 <script>
+var a = [
+{% for choice in question.choice_set.all %}
+    {{choice.votes}},
+{% endfor %}
+];
+var sum  = a.reduce((x, y) => x + y);
+var x = document.getElementsByClassName("result-item");
+console.log(a);
+console.log(sum);
+console.log(x);
+
+var i;
+for (i = 0; i < a.length; i++) {
+  a[i] = a[i] / sum * 100;
+}
+console.log(a);
+
+var i;
+for (i = 0; i < a.length; i++) {
+  x[i].style.width=`${a[i]}%`;
+}
+
+
+
 var ctx = document.getElementById('chart').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
