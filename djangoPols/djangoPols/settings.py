@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'phonenumber-field',
+    'phonenumber_field',
     'kupci.apps.KupciConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
