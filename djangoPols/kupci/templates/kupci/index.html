@@ -1,0 +1,37 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tvrtka</th>
+      <th>Adresa</th>
+      <th>Grad</th>
+      <th>Drzava</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {% for  tvrtka in tvrtke %}
+      <td>{{ tvrtka.id }}</td>
+      <td>{{ tvrtka.naziv_tvrtke }}</td>
+      <td>{{ tvrtka.street }} {{ tvrtka.street_number }}</td>
+      <td>{{ tvrtka.city }}</td>
+      <td>{{ tvrtka.country }}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+    <h1>Kontakti</h1>
+   {% comment %}  {% for kontakt in tvrtka.kontakti_set.all %}
+         {{kontakt.full_name}} {{kontakt.email}}
+    {% endfor %} {% endcomment %}
+    
+    <code>
+    Hello World!
+    </code>
+
+{% endblock content %}

@@ -4,8 +4,8 @@ from . import views
 app_name = 'kupci'
 # Path definiton
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    # path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+    path('', views.index_kupci, name='index'),
+    path('novi/', views.TvrtkeCreateView.as_view(), name='tvrtka_nova'),
     # path('<int:pk>/edit/', views.ResultView.as_view(), name='result'),
 ]
 

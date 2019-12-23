@@ -1,0 +1,28 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+{% comment %}     <form  method="post">{%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Save">
+    </form> {% endcomment %}
+
+
+<form method="POST"> {% csrf_token %}
+<div class="row">
+  {% for field in form %}
+    <div class="fieldWrapper u-full-width">
+        <div class="six columns">
+        {{ field.errors }}
+        {{ field.label_tag }} 
+        {{ field }}
+        </div> 
+        {% if field.help_text %}
+        <span class="help">{{ field.help_text|safe }}</span>
+        {% endif %}
+    </div>
+{% endfor %}
+</div>
+  <input class="button-primary" type="submit" value="Submit">
+</form>
+{% endblock content %}
+

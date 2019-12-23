@@ -1,0 +1,33 @@
+   {% extends 'polls/base.html' %}
+
+{% block content %}
+
+<form method="POST"> {% csrf_token %}
+<div class="row">
+  {% for field in tvrtka_form %}
+    <div class="fieldWrapper u-full-width">
+        <div class="six columns">
+        {{ field.errors }}
+        {{ field.label_tag }} 
+        {{ field }}
+        </div> 
+        {% if field.help_text %}
+        <span class="help">{{ field.help_text|safe }}</span>
+    </div>
+        {% endif %}
+{% endfor %}
+</div>
+<table class="u-full-width">
+  <tbody>
+{% for knt in kontakti_form %}
+         {{ knt }}
+        {% if knt.help_text %}
+        <span class="help">{{ knt.help_text|safe }}</span>
+        {% endif %}
+{% endfor %}
+
+<input class="button-primary" type="submit" value="Submit">
+</form>
+{% endblock content %}
+  
+   
