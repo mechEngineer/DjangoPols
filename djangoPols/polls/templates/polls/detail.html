@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>{{question.question_text}}</h1> <hr>
-    {% if error_message %} <p><strong>{{ error_message }}</stromg</p> {% endif %}
+    {% if error_message %} <p><strong>{{ error_message }}</strong</p> {% endif %}
 
 
     <form action=" {% url 'polls:vote' question.id %}" method="POST">
@@ -17,5 +17,7 @@
         <br>
     {% endfor %}
     <input type="submit" class="button-primary" value="Vote">
+
+    <a href="{% url 'polls:result' question.id %}" class="button  button-red">View results</a>
     </form>
 {% endblock content %}
