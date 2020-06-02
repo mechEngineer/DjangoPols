@@ -12,11 +12,13 @@
 
     <a href=" {% url 'polls:detail' question.id %} " class="button button-primary"> Vote again</a>
     <a href=" {% url 'polls:detail' question.id %} " class="button button-red"> Return to polls</a>
-
+    <br>
+    <hr>
 
     <div class="chart-container" >
         <canvas id="chart" width="60%"> </canvas>
     </div>
+
 {% endblock content %}
 
 
