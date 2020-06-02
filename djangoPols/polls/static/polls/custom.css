@@ -1,8 +1,7 @@
 .chart-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
+
+  width: 60vw;
+  /*align-items: center;*/
 }
 
 #chart {
@@ -26,3 +25,14 @@
   color: #fff;
   border: none;
 }
+
+.chart-area{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+canvas{
+    margin: 0 auto;
+    width: 50%;
+    }

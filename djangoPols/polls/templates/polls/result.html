@@ -11,12 +11,15 @@
     </ul>
 
     <a href=" {% url 'polls:detail' question.id %} " class="button button-primary"> Vote again</a>
-    <a href=" {% url 'polls:detail' question.id %} " class="button button-red"> Return to polls</a>
+    <a href=" {% url 'polls:index' %} " class="button button-red"> Return to polls</a>
     <br>
     <hr>
 
-    <div class="chart-container" >
-        <canvas id="chart" width="60%"> </canvas>
+    <h2 style="text-align:center">Chart View</h2>
+    <div class="chart-area">
+      <div class="chart-container">
+        <canvas id="chart"> </canvas>
+      </div>
     </div>
 
 {% endblock content %}
@@ -63,12 +66,18 @@ var chart = new Chart(ctx, {
         },
         layout: {
             padding: {
-                left: 50,
-                right: 50,
+                left: 0,
+                right: 0,
                 top: 0,
                 bottom: 0
-            }
-    }}
+            },
+
+    },
+    title: {
+        display: true,
+        text: '{{ question.question_text|escapejs }}'
+    }
+  }
 });
 </script>
 {% endblock scripts %}
