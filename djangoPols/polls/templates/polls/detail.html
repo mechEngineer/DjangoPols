@@ -17,7 +17,7 @@
         <br>
     {% endfor %}
     <input type="submit" class="button-primary" value="Vote">
-
+    <a href="{% url 'polls:index' %}" class="button">Return to polls</a>
     <a href="{% url 'polls:result' question.id %}" class="button  button-red">View results</a>
     </form>
 {% endblock content %}
