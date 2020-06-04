@@ -1,9 +1,12 @@
 $bg_color: #f2f2f2 ;
 $prime_color:#6f00d7;
+$prime_light: lighten($prime_color, 40%);
 $green_color: green;
-$red_color: red;
+$red_color: #ff6961;
 
 
 h1{
   color: $prime_color;
+  border-bottom: 5px solid;
+  border-color: $prime_light;
 }
