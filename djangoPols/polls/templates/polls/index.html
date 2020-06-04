@@ -1,7 +1,7 @@
 {% extends 'polls/base.html' %}
 
 {% block content %}
-<h1>List of Questions</h1> <hr>
+<h1>List of Questions</h1>
     {% if latest_q %}
         {% for question in latest_q %}
             <a class="poll-list" href=" {% url 'polls:detail' question.id %} ">{{ question.question_text }}</a>
