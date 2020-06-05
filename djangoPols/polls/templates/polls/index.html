@@ -4,7 +4,9 @@
 <h1>List of Questions</h1>
     {% if latest_q %}
         {% for question in latest_q %}
-            <a class="poll-list" href=" {% url 'polls:detail' question.id %} ">{{ question.question_text }}</a>
+            <div class="poll-list">
+                <a href=" {% url 'polls:detail' question.id %} ">{{ question.question_text }}</a>
+            </div>
         {% endfor %}
     {% else %}
         <p>No polls are available.</p>

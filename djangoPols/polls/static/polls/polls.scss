@@ -1,12 +1,56 @@
-$bg_color: #f2f2f2 ;
+$bg_color: #e1e1e1 ;
+$bg_light: #f1f1f1;
 $prime_color:#6f00d7;
 $prime_light: lighten($prime_color, 40%);
 $green_color: green;
 $red_color: #ff6961;
+$margin:20px;
 
 
 h1{
+  // Header 1 style
   color: $prime_color;
   border-bottom: 5px solid;
   border-color: $prime_light;
+  margin: $margin;
+
+}
+
+body {
+  background-color: $bg_color;
+  padding: 0px;
+}
+
+.container{
+  background-color: $bg_light;
+  border: 1px solid;
+  border-color: #e2e2e2;
+  border-radius: 10px;
+
+}
+
+.poll-list{
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+  padding: 10px 10px;
+  margin: $margin;
+  background-image: linear-gradient(to right, #6f00d7, #8b3ce2, #a561ec, #bd83f6, #d3a4ff);
+  &:hover {
+    a {
+    color: #fff;
+    font-weight: 700;
+    }
+
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: large;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
 }

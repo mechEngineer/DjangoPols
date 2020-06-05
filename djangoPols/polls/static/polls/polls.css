@@ -2,5 +2,49 @@ h1 {
   color: #6f00d7;
   border-bottom: 5px solid;
   border-color: #d3a4ff;
+  margin: 20px;
+}
+
+body {
+  background-color: #e1e1e1;
+  padding: 0px;
+}
+
+.container {
+  background-color: #f1f1f1;
+  border: 1px solid;
+  border-color: #e2e2e2;
+  border-radius: 10px;
+}
+
+.poll-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 10px;
+  margin: 20px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#6f00d7), color-stop(#8b3ce2), color-stop(#a561ec), color-stop(#bd83f6), to(#d3a4ff));
+  background-image: linear-gradient(to right, #6f00d7, #8b3ce2, #a561ec, #bd83f6, #d3a4ff);
+}
+
+.poll-list:hover a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.poll-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: large;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 /*# sourceMappingURL=polls.css.map */
