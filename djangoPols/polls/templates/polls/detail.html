@@ -7,17 +7,22 @@
 
     <form action=" {% url 'polls:vote' question.id %}" method="POST">
     {% csrf_token %}
-    {% for choice in question.choice_set.all %}
-        <label for="choice{{forloop.counter}}">
-        <input type="radio" name="choice" is="choice{{forloop.counter}}" value="{{ choice.id }}">
-            <span class="label-body">
-            {{choice.choice_text}}
-            </span>
-        </label>
-        <br>
-    {% endfor %}
-    <input type="submit" class="button-primary" value="Vote">
-    <a href="{% url 'polls:index' %}" class="button">Return to polls</a>
-    <a href="{% url 'polls:result' question.id %}" class="button  button-red">View results</a>
+    <div class="vote-form">
+        {% for choice in question.choice_set.all %}
+            <div class="vote-choice">
+                <label for="choice{{forloop.counter}}">
+                <input type="radio" name="choice" is="choice{{forloop.counter}}" value="{{ choice.id }}">
+                    <span class="label-body">
+                    {{choice.choice_text}}
+                    </span>
+                </label>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="vote-btn">
+        <input type="submit" class="button-primary" value="Vote">
+        <a href="{% url 'polls:index' %}" class="button">Return to polls</a>
+        <a href="{% url 'polls:result' question.id %}" class="button  button-red">View results</a>
+    </div>
     </form>
 {% endblock content %}

@@ -15,6 +15,7 @@ body {
   border: 1px solid;
   border-color: #e2e2e2;
   border-radius: 10px;
+  padding: 0 20px;
 }
 
 .poll-list {
@@ -46,5 +47,52 @@ body {
   display: block;
   height: 100%;
   width: 100%;
+}
+
+.vote-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.vote-form {
+  border-bottom: 2px solid;
+  border-color: #e1e1e1;
+  margin-bottom: 1.5rem;
+}
+
+.vote-choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid;
+  padding: 0.2rem 0;
+  margin-bottom: 0.15rem;
+  height: 3rem;
+  background-color: #ff6961;
+}
+
+.vote-choice:last-child {
+  margin-bottom: 1rem;
+}
+
+.vote-choice input {
+  margin: 0 0 0 0.3rem;
+}
+
+.vote-choice label {
+  margin: 0;
 }
 /*# sourceMappingURL=polls.css.map */
